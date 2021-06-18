@@ -23,16 +23,16 @@
     </div>
 
     <ul class="weather_list">
-      <li class="weather_info">
+      <li class="weather_info" >
         <div class="weather">
-          <span> {{ item.wea }} </span>
+          <span> {{ weatherList.wea }} </span>
         </div>
         <div class="temp">
-          <b>  {{ item.tem2 }} </b> ~
-          <b>  {{ item.tem1 }} </b>
+          <b>  {{ weatherList.tem2 }} </b> ~
+          <b>  {{ weatherList.tem1 }} </b>
         </div>
         <div class="date">
-          <span>  {{ item.date + item.week }} </span>
+          <span>  {{ weatherList.date + weatherList.week }} </span>
         </div>
       </li>
     </ul> 
