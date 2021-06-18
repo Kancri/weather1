@@ -21,18 +21,17 @@
         {{ city }}
       </a>
     </div>
-
     <ul class="weather_list">
-      <li class="weather_info" >
+      <li class="weather_info"  v-for="item in weatherList"  :key="item">
         <div class="weather">
-          <span> {{ weatherList.wea }} </span>
+          <span> {{ item.wea }} </span>
         </div>
         <div class="temp">
-          <b>  {{ weatherList.tem2 }} </b> ~
-          <b>  {{ weatherList.tem1 }} </b>
+          <b>  {{ item.tem2 }} </b> ~
+          <b>  {{ item.tem1 }} </b>
         </div>
         <div class="date">
-          <span>  {{ weatherList.date + weatherList.week }} </span>
+          <span>  {{ item.date + item.week }} </span>
         </div>
       </li>
     </ul> 
@@ -61,13 +60,13 @@ export default {
   },
   methods: {
     searchWeather:function(){
-      this.weatherList = [];
       // console.log('天气查询');
       // console.log(this.city);
       var that = this;
-      this.axios.get('https://tianqiapi.com/api?version=v6&appid=76228964&appsecret=FEemrZ5f&city='+this.city)
+      this.axios.get('https://www.tianqiapi.com/api?version=v1&appid=21375891&appsecret=fTYv7v5E&city=%E7%A6%8F%E5%B7%9E&city='+this.city)
       .then(function(response){
-        that.weatherList = response.data
+        // console.log(response);
+        that.weatherList = response.data.data
       })
       .catch(function(err){})
     },
@@ -77,7 +76,7 @@ export default {
     },
     // cearchWeather: function () {
     //   this.$http
-    //     .get( 'https://tianqiapi.com/api?version=v6&appid=76228964&appsecret=FEemrZ5f&city='+this.city )
+    //     .get( 'https://www.tianqiapi.com/api?version=v1&appid=21375891&appsecret=fTYv7v5E&city=%E7%A6%8F%E5%B7%9E&city='+this.city )
     //     .then((response) => {
     //       console.log("成功");
     //     })
