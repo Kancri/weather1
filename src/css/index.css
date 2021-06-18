@@ -41,16 +41,15 @@
     text-align: center;
 }
 
-.weather_info:nth-child(5) {
+.weather_info:last-child {
     background: none;
 }
 
-.weather_info {
+.weather_list li {
     display: inline-block;
     width: 160px;
     height: 200px;
     padding: 0 16px;
-    overflow: hidden;
     position: relative;
     background: url(../img/line.png) right center no-repeat;
     background-size: 1px 130px;

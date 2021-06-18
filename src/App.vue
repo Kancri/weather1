@@ -35,7 +35,7 @@
           <span>  {{ item.date + item.week }} </span>
         </div>
       </li>
-    </ul>
+    </ul> 
   </div>
 </template>
 
@@ -61,12 +61,13 @@ export default {
   },
   methods: {
     searchWeather:function(){
+      this.weatherList = [];
       // console.log('天气查询');
       // console.log(this.city);
       var that = this;
       this.axios.get('https://tianqiapi.com/api?version=v6&appid=76228964&appsecret=FEemrZ5f&city='+this.city)
       .then(function(response){
-        that.response = response.data
+        that.weatherList = response.data
       })
       .catch(function(err){})
     },
