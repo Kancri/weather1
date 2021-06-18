@@ -23,7 +23,7 @@
     </div>
 
     <ul class="weather_list">
-      <li class="weather_info" v-for="item in weatherList" :key="item">
+      <li class="weather_info">
         <div class="weather">
           <span> {{ item.wea }} </span>
         </div>
