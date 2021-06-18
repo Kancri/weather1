@@ -36,7 +36,7 @@
 }
 
 .weather_list {
-    margin-top: 150px;
+    margin-top: 100px;
     height: 200px;
     text-align: center;
 }
@@ -82,4 +82,15 @@
 
 .hotcity a:hover {
     color: #27a4c8;
+}
+
+.music {
+    width: 200px;
+    height: 54px;
+    background-color: #27a4c8;
+    margin-top: 36px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border: 0;
 }

@@ -6,8 +6,12 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
+import router from './router'
+Vue.use(router)
+
 import './css/index.css'
 import './css/reset.css'
+import './css/music.css'
 
 new Vue({
     render: h => h(App),

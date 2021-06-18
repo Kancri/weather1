@@ -35,6 +35,7 @@
         </div>
       </li>
     </ul> 
+   <button  class="music" @click="click"> 去听首歌~ </button>
   </div>
 </template>
 
@@ -84,7 +85,11 @@ export default {
     //       console.log("失败");
     //     });
     // },
+    click(){
+      this.$router.push({path:"/music"});
+    }
   },
+
 };
 </script>
 
