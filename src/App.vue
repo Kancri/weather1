@@ -1,25 +1,13 @@
 <template>
 
-  <div id="app">
-  
+  <div id="app"> 
     <img alt="Vue logo" src="./img/logo.png" />
     <div class="search-city">
-      <input
-        type="text"
-        placeholder="请输入要查询的城市"
-        class="city"
-        v-model="city"
-        @keyup.enter="searchWeather"
-      />
+      <input type="text" placeholder="请输入要查询的城市" class="city" v-model="city" @keyup.enter="searchWeather" />
       <button class="search" cursor:pointer @click="searchWeather">搜索</button>
     </div>
     <div class="hotcity">
-      <a
-        href="javascript:;"
-        v-for="city in hotCitys"
-        :key="city"
-        @click="changeCity(city)"
-      >
+      <a href="javascript:;" v-for="city in hotCitys" :key="city" @click="changeCity(city)">
         {{ city }}
       </a>
     </div>
@@ -36,8 +24,8 @@
           <span>  {{ item.date + item.week }} </span>
         </div>
       </li>
-    </ul> 
-   <button  class="music" @click="click"> 去听首歌~ </button>
+    </ul>  
+      <button class="music" @click="click" >听首歌吧~</button>
   </div>
 </template>
 
@@ -77,6 +65,10 @@ export default {
       this.city = city;
       this.searchWeather();
     },
+    click(){
+      this.$router.push({ path: '/music' });
+    }
+    // 测试接口是否可用
     // cearchWeather: function () {
     //   this.$http
     //     .get( 'https://www.tianqiapi.com/api?version=v1&appid=21375891&appsecret=fTYv7v5E&city=%E7%A6%8F%E5%B7%9E&city='+this.city )
@@ -87,9 +79,6 @@ export default {
     //       console.log("失败");
     //     });
     // },
-    click(){
-      this.$router.push({path:"/music"});
-    }
   },
 
 };

@@ -1,0 +1,112 @@
+#app-music {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.mus {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 640px;
+    margin-left: -340px;
+    margin-top: 200px;
+}
+
+.mus_hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: #0a88d7;
+    color: aliceblue;
+    padding: 0 16px;
+}
+
+.mus_search {
+    width: 200px;
+    height: 36px;
+    line-height: 36px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    padding-left: 16px;
+}
+
+.mus_search input {
+    background: none;
+    border: 0;
+    outline: none;
+}
+
+.mus_search input::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/zoom.png) no-repeat;
+}
+
+.mus_bd {
+    display: flex;
+    width: 640px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.45);
+    padding: 0 16px;
+}
+
+.song_list {
+    flex: 3;
+    background: url(../images/line02.png) right center no-repeat;
+    background-size: 1px 200px;
+}
+
+.song_list li {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+.song_list li:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.song_list li a {
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    background: url(../images/play.png) no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+.song_list li b {
+    font-size: 16px;
+    font-weight: normal;
+    color: #555;
+}
+
+.song_list li span i {
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    background: url(../images/mv.png) no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-left: 80px;
+}
+
+.play {
+    flex: 4;
+    background: url(../images/line02.png) right center no-repeat;
+    background-size: 1px 200px;
+}
+
+.comments {
+    flex: 3;
+}
