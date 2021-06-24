@@ -14,5 +14,6 @@ import './css/reset.css'
 import './css/music.css'
 
 new Vue({
+    router,
     render: h => h(App),
 }).$mount('#app')

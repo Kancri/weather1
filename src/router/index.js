@@ -12,17 +12,22 @@ Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
+        name: 'page',
+        component: () =>
+            import ('../page/weather.vue')
+    },
+    {
+        path: '/weather',
         name: 'weather',
         component: () =>
-            import ('../App.vue')
+            import ('../page/weather.vue')
     },
     {
         path: '/music',
         name: 'music',
         component: () =>
-            import ('../music.vue')
+            import ('../page/music.vue')
     },
-
 
 ]
 
