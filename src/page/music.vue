@@ -1,20 +1,21 @@
 <template>
-  <div id="app-music">
+<div id="app"> 
+ <div class="app-music">
     <div class="mus clearfix">
      <!-- 头部 -->
       <header class="mus_hd">
         <h3>悦听</h3>
         <div class="mus_search">
-          <input type="text" placeholder="输入你想听的歌曲名" />
+          <input type="text" v-model="song" @keyup.enter="searchMusic" placeholder="输入你想听的歌曲名" />
         </div>
       </header>
       <!-- 中间内容 -->
       <section class="mus_bd">
         <!-- 左侧搜索结果列表 -->
         <ul class="song_list">
-          <li>
-          <a href=""></a>
-          <b> 雨花石 </b>
+          <li v-for="item in musicList" :key="item">
+          <a href="javascript:;"></a>
+          <b> {{item.name}} </b>
           <span><i></i></span>
           </li>
         </ul>
@@ -45,15 +46,32 @@
       <!-- mv播放界面 -->
       <div class="video_con" style="display:none;" >
         <video src="" controls="controls" class="myvideo"></video>
-        <div class="mask" @click="hide"></div>
+        <div class="mask" ></div>
       </div>
     </div>
   </div>
+</div>
+
 </template>
 
 <script>
     export default {
-        name: "#app-music",
+        name: "App",
+        data() {
+            return {
+                song: "",
+                musicList: [],
+            }
+        },
+        methods: {
+            searchMusic: function() {
+              var that = this;
+                this.axios.get("https://autumnfish.cn/search?keywords="+this.song).then(function(response) {
+                  // console.log(response);
+                  that.musicList = response.data.result.songs;
+                }, function(err) {})
+            }
+        },
     };
 </script>
 

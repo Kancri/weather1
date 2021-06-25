@@ -1,7 +1,7 @@
 <template>
 
     <div id="app"> 
-      <img alt="Vue logo" src="../img/logo.png" />
+      <img alt="Vue logo" class="logo"  src="../img/logo.png" />
       <div class="search-city">
         <input type="text" placeholder="请输入要查询的城市" class="city" v-model="city" @keyup.enter="searchWeather" />
         <button class="search" cursor:pointer @click="searchWeather">搜索</button>
@@ -31,15 +31,15 @@
 
 <script>
     /*
-            请求地址:https://tianqiapi.com/api?version=v6&appid=76228964&appsecret=FEemrZ5f
-            请求方法:get
-            请求参数:city(城市名)
-            响应内容:天气信息
-          
-            1. 点击回车
-            2. 查询数据
-            3. 渲染数据
-            */
+                请求地址:https://tianqiapi.com/api?version=v6&appid=76228964&appsecret=FEemrZ5f
+                请求方法:get
+                请求参数:city(城市名)
+                响应内容:天气信息
+              
+                1. 点击回车
+                2. 查询数据
+                3. 渲染数据
+                */
     export default {
         name: "App",
         data() {
